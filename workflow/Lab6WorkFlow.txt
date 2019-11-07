@@ -11,7 +11,7 @@ listprod.jsp (10)
 Make sure that everyone's code works together
 Bonus
   upload website to server
-PERSON 2
+Jake
 --------------------------------------
 listprod.jsp (10)
   connect to db
@@ -19,11 +19,20 @@ listprod.jsp (10)
     build weblink url
 order.jsp (20)
   make connection
-  validate cId (numeric) and cId exists
+  validate cId (numeric, see below) and cId exists
     display error if not
 Bonus
   ????
-PERSON 3
+  //validate cId
+String customerId;
+try {
+    		int id = Integer.parseInt(customerId);
+    		if(customerId.length()>5)
+    			throw new NumberFormatException();
+    	} catch(NumberFormatException e) {
+    		return sb.toString();
+    	}
+Aleks
 --------------------------------------
 order.jsp (20)
   show error message if shopcart is empty
@@ -31,7 +40,7 @@ order.jsp (20)
   traverse product list, store each into orderproduct
 Bonus
   ????
-PERSON 4
+Karim
 --------------------------------------
 order.jsp (20)
   update amount in ordersummary
