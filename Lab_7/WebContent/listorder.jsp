@@ -52,6 +52,7 @@ try(Connection con = DriverManager.getConnection(url,uid,pw);
 	"<th>Total Amount</th></tr>");
 	ResultSet rst = stmt.executeQuery(sql);
 	String last = null;
+	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 	while(rst.next()) {
 		String current = rst.getString(1);
 		if(last!=null) {
@@ -61,19 +62,15 @@ try(Connection con = DriverManager.getConnection(url,uid,pw);
 		if(last==null||!last.equals(current)) {
 			last = current;
 			out.println("<tr>");
-			for(int i=1;i<6;++i)
+			for(int i=1;i<5;++i)
 				out.println("<td>" + rst.getString(i)+"</td>");
+			out.println("<td>" + currFormat.format(rst.getDouble(5))+"</td>");
 			out.println("</tr>");
 			out.println("<tr align=\"right\"><td colspan=\"5\"><table class=\"roundedCorners\">" +
 					"<th>Product Id</th> <th>Quantity</th> <th>Price</th></tr>");
 		}
 		out.println("<tr><td>" + rst.getString(6) + "</td><td>" + rst.getString(7)+"</td>" +
-		"<td>"+rst.getString(8)+"</td></tr>");
-		//<tr><td>1</td><td>1</td><td>$18.00</td></tr>
-		
-		
-
-
+		"<td>"+currFormat.format(rst.getDouble(8))+"</td></tr>");
 	}
 	out.println("</table>");
 	
