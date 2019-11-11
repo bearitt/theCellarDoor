@@ -4,13 +4,13 @@ Initial steps, set up db
 Question 1: modify listorder.jsp
 Barret
 --------------------------------------
-Whatever we don't finish from Question 1
+//Whatever we don't finish from Question 1
 listprod.jsp (10)
-  list products by name (GET method)
-  construct query
+//  list products by name (GET method)
+//  construct query
 Make sure that everyone's code works together
 Bonus
-  upload website to server
+//  upload website to server
 Jake
 --------------------------------------
 listprod.jsp (10)
