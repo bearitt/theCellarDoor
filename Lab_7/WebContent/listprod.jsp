@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>YOUR NAME Grocery</title>
+<title>The Cellar Door - Products</title>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
 
@@ -27,7 +28,28 @@ catch (java.lang.ClassNotFoundException e)
 {
 	out.println("ClassNotFoundException: " +e);
 }
-
+String uid = "bjackson";
+String pw = "66122573";
+String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_bjackson;";
+PreparedStatement pstmt = null;
+ResultSet rst = null;
+try(Connection con = DriverManager.getConnection(url,uid,pw);) {
+	String sql = "SELECT productName,categoryName,productPrice " +
+			"FROM product P JOIN category C ON C.categoryId=P.categoryId " +
+	"WHERE productName LIKE ?";
+	pstmt = con.prepareStatement(sql);
+	pstmt.setString(1, "%" + name + "%");
+	rst = pstmt.executeQuery();
+	out.println("<table class=\"table-hover\"><thead><tr>" +
+			"<th> </th><th>Product Name</th><th>Category</th><th>Price</th></tr></thead>");
+	while(rst.next()) {
+		out.println("<tr><td><a href=\"showcart.jsp\">This doesn't work yet</a></td>"
+	+ "<td>" + rst.getString(1) + "</td><td>" + rst.getString(2) + "</td><td>" +
+				rst.getString(3) + "</td></tr>");
+	}
+} catch(SQLException e) {
+	out.println("Something went wrong");
+}
 // Variable name now contains the search string the user entered
 // Use it to build a query and print out the resultset.  Make sure to use PreparedStatement!
 
@@ -43,6 +65,7 @@ catch (java.lang.ClassNotFoundException e)
 // NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 // out.println(currFormat.format(5.0);	// Prints $5.00
 %>
-
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
