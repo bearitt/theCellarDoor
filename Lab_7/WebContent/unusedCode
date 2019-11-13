@@ -1,0 +1,35 @@
+<!--_____________________shop.html_____________________-->
+<!--css header-->
+.container {
+  padding: 80px 120px;
+}
+
+<!-- Carousel captions-->
+<div class="carousel-caption">
+  <h1>Some barrels</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Some grapes</h1>
+</div>
+<div class="carousel-caption">
+  <h1>A vineyard</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Looks like a bucket</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Glasses with no wine</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Glasses with wine</h1>
+</div>
+<!--listprod form original-->
+<form method="get" action="listprod.jsp" class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="helpProduct">Search for the products you want to buy</label>
+    <input type="text" class="form-control" id="helpProduct" placeholder="Enter product name" name="productName">
+  </div>
+
+  <button type="submit" class="btn btn-secondary">Submit</button>
+  <button type="reset" class="btn btn-dark">Reset</button>
+</form>
