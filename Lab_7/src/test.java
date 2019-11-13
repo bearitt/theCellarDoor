@@ -14,6 +14,12 @@ public class test {
 			String uid = "bjackson";
 			String pw = "66122573";
 			String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_bjackson;";
+			try(Connection con = DriverManager.getConnection(url,uid,pw);
+					Statement stmt = con.createStatement()) {
+				
+			} catch(SQLException e) {
+				System.err.println(e);
+			}
 //			try(Connection con = DriverManager.getConnection(url,uid,pw); 
 //					Statement stmt = con.createStatement();) {
 ////				String updateUser = "INSERT INTO Customer (firstName,lastName,email,phonenum,address,"
@@ -40,20 +46,21 @@ public class test {
 //		} catch(SQLException e) {
 //			System.err.println(e);
 //		}
-			String name = "c";
-			PreparedStatement pstmt = null;
-			ResultSet rst = null;
-			try(Connection con = DriverManager.getConnection(url,uid,pw);) {
-				String sql = "SELECT productName,productPrice FROM Product WHERE productName LIKE ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%" + name + "%");
-				rst = pstmt.executeQuery();
-				while(rst.next()) {
-					System.out.println(rst.getString(1));
-				}
-			} catch(SQLException e) {
-				System.err.println("error: " + e);
-			}
+//			String name = "c";
+//			PreparedStatement pstmt = null;
+//			ResultSet rst = null;
+//			
+//			try(Connection con = DriverManager.getConnection(url,uid,pw);) {
+//				String sql = "SELECT productName,productPrice FROM Product WHERE productName LIKE ?";
+//				pstmt = con.prepareStatement(sql);
+//				pstmt.setString(1, "%" + name + "%");
+//				rst = pstmt.executeQuery();
+//				while(rst.next()) {
+//					System.out.println(rst.getString(1));
+//				}
+//			} catch(SQLException e) {
+//				System.err.println("error: " + e);
+//			}
 
 	}
 

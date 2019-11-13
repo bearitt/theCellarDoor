@@ -7,10 +7,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Your Shopping Cart</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Cellar Door - Your Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="shop.html">The Cellar Door</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="shop.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listorder.jsp">Orders List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listprod.jsp">Product List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="showcart.jsp">Your Shopping Cart</a>
+        </li>
+      </ul>
+			<form class="form-inline my-2 my-lg-0" action="listprod.jsp" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="productName">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Product</button>
+      </form>
+    </div>
+  </nav>
 <%
 // Get the current list of products
 @SuppressWarnings({"unchecked"})
@@ -30,7 +58,7 @@ else
 
 	double total =0;
 	Iterator<Map.Entry<String, ArrayList<Object>>> iterator = productList.entrySet().iterator();
-	while (iterator.hasNext()) 
+	while (iterator.hasNext())
 	{	Map.Entry<String, ArrayList<Object>> entry = iterator.next();
 		ArrayList<Object> product = (ArrayList<Object>) entry.getValue();
 		if (product.size() < 4)
@@ -38,7 +66,7 @@ else
 			out.println("Expected product with four entries. Got: "+product);
 			continue;
 		}
-		
+
 		out.print("<tr><td>"+product.get(0)+"</td>");
 		out.print("<td>"+product.get(1)+"</td>");
 
@@ -47,7 +75,7 @@ else
 		Object itemqty = product.get(3);
 		double pr = 0;
 		int qty = 0;
-		
+
 		try
 		{
 			pr = Double.parseDouble(price.toString());
@@ -63,7 +91,7 @@ else
 		catch (Exception e)
 		{
 			out.println("Invalid quantity for product: "+product.get(0)+" quantity: "+qty);
-		}		
+		}
 
 		out.print("<td align=\"right\">"+currFormat.format(pr)+"</td>");
 		out.print("<td align=\"right\">"+currFormat.format(pr*qty)+"</td></tr>");
@@ -78,6 +106,7 @@ else
 }
 %>
 <h2><a href="listprod.jsp">Continue Shopping</a></h2>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
-</html> 
-
+</html>
