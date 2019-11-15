@@ -33,3 +33,9 @@
   <button type="submit" class="btn btn-secondary">Submit</button>
   <button type="reset" class="btn btn-dark">Reset</button>
 </form>
+<!--Colour scheme-->
+black         #262524
+dark grey     #403F3D
+light         #F2E8DF
+medium        #736E6C
+medium-light  #A6A29F

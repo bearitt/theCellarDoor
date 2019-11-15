@@ -3,6 +3,7 @@ public class test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		System.out.println("Loading database");
 		try
 		{	// Load driver class
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -61,6 +62,17 @@ public class test {
 //			} catch(SQLException e) {
 //				System.err.println("error: " + e);
 //			}
+			try(Connection con = DriverManager.getConnection(url,uid,pw); 
+					Statement stmt = con.createStatement()) {
+				String sql = "SELECT * FROM incart";
+				ResultSet rst = stmt.executeQuery(sql);
+//				while(rst.next()) {
+//					System.out.println(rst.getString(11));
+//				}
+				System.out.println(rst.next()? "Has next" : "Doesn't have next");
+			} catch(SQLException e) {
+				System.err.println(e);
+			}
 
 	}
 
