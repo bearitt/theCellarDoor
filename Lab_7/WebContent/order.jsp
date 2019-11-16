@@ -4,6 +4,7 @@
 <%@ page import="java.util.Iterator"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.Map"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
 <!DOCTYPE html>
 <html>
@@ -81,6 +82,14 @@ body {
 					ResultSet rs = prep.executeQuery();
 					if (!rs.next()) {
 						out.println("<h1>Invalid User Id</h1>");
+						out.println("<form method=\"get\" action=\"order.jsp\" class=\"form-inline\">"+
+						"<div class=\"form-group\"><div class=\"col-xs-12 col-md-4\">"+
+						"<input type=\"text\" class=\"form-control\" id=\"helpProduct\""+
+						"placeholder=\"Enter customer id\" name=\"customerId\"></div></div>"+
+						"<div class=\"col-xs-12 col-md-8\"><div class=\"btn-group\">"+
+						"<button type=\"submit\" class=\"btn btn-secondary\">Submit</button>"+
+						"<button type=\"reset\" class=\"btn btn-dark\">Reset</button>"+
+						"</div></div></form>");
 						conn.close();
 					} else {
 						conn.close();
@@ -103,13 +112,10 @@ body {
 								pUserInfo.setString(1, custId);
 								ResultSet rstCust = pUserInfo.executeQuery();
 								rstCust.next();
-								//sql statement to obtain date
-								String sqlDate = "SELECT GETDATE()";
-								Statement stDate = con.createStatement();
-								ResultSet rsDate = stDate.executeQuery(sqlDate);
-								rsDate.next();
+								//obtain current date and time
+								Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 								//begin adding fields to ordersummary
-								psOrderSum.setDate(1, rsDate.getDate(1));
+								psOrderSum.setTimestamp(1, timestamp);
 								psOrderSum.setInt(2, 0); //totalAmount will be calculated from orderProduct
 								psOrderSum.setString(3, rstCust.getString(1));
 								psOrderSum.setString(4, rstCust.getString(2));
@@ -153,8 +159,8 @@ body {
 								String upTotal = "UPDATE OrderSummary SET totalAmount = " + totalAmount
 										+ " WHERE orderId = " + orderId;
 								stTotal.executeUpdate(upTotal);
-								//clear the shopping cart
-								productList.clear();
+								//clear the shopping cart by setting productList attribute to null
+								session.setAttribute("productList",null);
 								out.println("<h1>Order submitted!</h1>");
 							}
 						} catch (SQLException e) {
@@ -164,7 +170,15 @@ body {
 					}
 
 				} catch (NumberFormatException e) {
-					out.println("<h1>Invalid Customer Id</h1>");
+					out.println("<h1>Invalid User Id</h1>");
+					out.println("<form method=\"get\" action=\"order.jsp\" class=\"form-inline\">"+
+					"<div class=\"form-group\"><div class=\"col-xs-12 col-md-4\">"+
+					"<input type=\"text\" class=\"form-control\" id=\"helpProduct\""+
+					"placeholder=\"Enter customer id\" name=\"customerId\"></div></div>"+
+					"<div class=\"col-xs-12 col-md-8\"><div class=\"btn-group\">"+
+					"<button type=\"submit\" class=\"btn btn-secondary\">Submit</button>"+
+					"<button type=\"reset\" class=\"btn btn-dark\">Reset</button>"+
+					"</div></div></form>");
 				}
 				//TODO: Print out customer order
 				// Determine if there are products in the shopping cart

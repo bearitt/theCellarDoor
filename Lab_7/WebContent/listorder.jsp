@@ -86,11 +86,19 @@
 						last = current;
 						//starts a new row for the next order
 						out.println("<tr>");
-						//for loop prints order id, order date, customer id, customer name
-						for (int i = 1; i < 5; ++i)
-							out.println("<td>" + rst.getString(i) + "</td>");
-						//total amount printed on separate line to use currency format
-						out.println("<td>" + currFormat.format(rst.getDouble(5)) + "</td>");
+						//for loop prints order id, order date, customer id, customer name, totalAmount
+						for (int i = 1; i < 6; ++i) {
+							//format orderDate to only show centiseconds after seconds
+						    if(i==2) {
+						        out.println("<td>" + rst.getString(i).substring(0,21) + "</td>");
+						    }
+							//format totalAmount to print currency format
+						    else if(i==5)
+						        out.println("<td>" + currFormat.format(rst.getDouble(5)) + "</td>");
+							//no formatting on other values
+						    else
+							    out.println("<td>" + rst.getString(i) + "</td>");
+						}
 						out.println("</tr>");
 						//starts a new row for the nested product table
 						out.println("<tr align=\"right\"><td colspan=\"5\">"
