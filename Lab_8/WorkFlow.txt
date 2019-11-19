@@ -1,0 +1,49 @@
+###########################
+##PROJECT DELIVERABLES
+###########################
+Product page
+  modify listing page to include link to product pages
+  use prepared statement to retrieve and display product info by id
+  display image using img tag
+  modify displayimage.jsp to display image from binary
+  add link "add to cart" and continue shopping (copy from listprod.jsp!)
+Admin/login page
+  check user is logged in before accessing page
+  display daily sales reports
+  display current user on main page
+  modify validatelogin to check uid and pw
+Customer page
+  display error page if attempt to access page and not logged in
+  retrieve customer info by id and display it
+###########################
+##ASSIGNED WORK
+###########################
+##Barret
+###########################
+Admin/login page
+  check login
+  display user on main page
+  modify validatelogin
+Update format to match site in lab 7
+###########################
+##Person 1
+###########################
+Product page
+  modify listing page to include link to product pages
+  use prepared statement to retrieve and display product info by id
+Admin/login page
+  display daily sales reports
+###########################
+##Person 2
+###########################
+Product page
+  display image using img tag (let Barret know if help needed with html)
+  modify displayimage.jsp to display image from binary (will need to figure out
+  how to display an image from binary!)
+  add link "add to cart" and continue shopping (copy from listprod.jsp!)
+###########################
+##Person 3
+###########################
+Customer page
+  display error page if attempt to access page and not logged in
+  retrieve customer info by id and display it
