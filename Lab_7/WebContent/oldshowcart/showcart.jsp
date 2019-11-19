@@ -31,12 +31,6 @@ body {
 </style>
 </head>
 <body>
-<script>
-	function update(newid,newqty)
-	{
-		window.location="showcart.jsp?update="+newid+"&newqty="+newqty;
-	}
-</script>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="shop.html">The Cellar Door</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -75,10 +69,6 @@ body {
 				String delete = request.getParameter("delete");
 				if ((delete!=null && productList!=null) && (!delete.equals(-1) && productList.containsKey(delete)))
 					productList.remove(delete);
-				String newId = request.getParameter("newid");
-				String newQty = request.getParameter("newqty");
-				if(newId!=null&&newQty!=null&&productList.containsKey(newId)&&newQty.equals("0"))
-					productList.remove(newId);
 				if(productList==null || productList.size()==0) {
 					session.setAttribute("productList",null);
 					productList=null;
@@ -97,8 +87,7 @@ body {
 					out.print("<table class=\"table table-borderless table-hover table-responsive-md\""+
 					" style=\"color:#F2E8DF\"><thead><tr><th>Product Id</th><th>Product Name</th><th>Quantity</th>");
 					out.println("<th>Price</th><th>Subtotal</th><th></th><th></th></tr></thead><tbody>");
-					out.println("<form method=\"get\" class=\"form-inline\" name=\"form1\""+
-					" action=\"showcart.jsp\">");
+
 					double total = 0;
 					Iterator<Map.Entry<String, ArrayList<Object>>> iterator = productList.entrySet().iterator();
 					while (iterator.hasNext()) {
@@ -108,15 +97,11 @@ body {
 							out.println("Expected product with four entries. Got: " + product);
 							continue;
 						}
-						if(newId!=null&&newId.equals(product.get(0).toString()))
-							product.set(3,request.getParameter("newqty"));
-						//make orderId read only
-						out.print("<tr><td><input type=\"text\" class=\"form-control\""+
-						" name=\"newid\" value=\""+product.get(0)+"\" readonly>");
+
+						out.print("<tr><td>" + product.get(0) + "</td>");
 						out.print("<td>" + product.get(1) + "</td>");
-						//form for changing quantity
-						out.print("<td><input type=\"text\" class=\"form-control\""+
-							"name=\"newqty\" value=\""+product.get(3)+"\">");
+
+						out.print("<td align=\"center\">" + product.get(3) + "</td>");
 						Object price = product.get(2);
 						Object itemqty = product.get(3);
 						double pr = 0;
@@ -139,9 +124,8 @@ body {
 						//delete entry
 						out.print("<td><a href=\"showcart.jsp?delete="+product.get(0)+"\">");
 						out.print("Remove from cart</a></td><td></td>");
-						//button to update cart
-						out.print("<td><button type=\"submit\" class=\"btn btn-secondary\">"+
-						 "Update Quantity</button></td>");
+
+
 						//end table row
 						out.println("</tr></tr>");
 
@@ -149,12 +133,11 @@ body {
 						total = total + pr * qty;
 					}
 					out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>" + "<td align=\"right\">"
-							+ currFormat.format(total) + "</td></tr></tbody></form></table>");
+							+ currFormat.format(total) + "</td></tr></tbody></table>");
 
 
 
 				}
-
 			%>
 		</div>
 		<div class="col-sm-12 p-5">

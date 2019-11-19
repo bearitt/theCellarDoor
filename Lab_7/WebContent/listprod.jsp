@@ -26,7 +26,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .table-hover tbody tr:hover td {
-    background-color:#A6A29F;
+  background-color:#A6A29F;
 	color:#262524;
 }
 
@@ -111,7 +111,7 @@ a:link, a:visited, a:hover, a:active {
 					pstmt.setString(1, "%" + name + "%");
 					rst = pstmt.executeQuery();
 					//table header
-					out.println("<table class=\"table table-hover table-responsive-md\"><thead><tr>"
+					out.println("<table class=\"table table-hover table-responsive-md table-borderless\"><thead><tr>"
 							+ "<th> </th><th>Product Name</th><th>Category</th><th>Price</th></tr></thead>");
 					//table data
 					int i = 0;

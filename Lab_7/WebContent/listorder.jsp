@@ -12,6 +12,23 @@
 .container-fluid, container {
 	padding: 80px 120px;
 }
+
+body {
+	color: #F2E8DF;
+}
+
+.table {
+	color: #F2E8DF;
+}
+
+a:link, a:visited, a:hover, a:active {
+	color: #F2E8DF;
+}
+
+.table-hover tbody tr:hover td {
+  background-color:#A6A29F;
+	color:#262524;
+}
 </style>
 </head>
 <body>
@@ -43,12 +60,10 @@
 			</form>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="container-fluid"
-			style="background-color: #A6A29F; text-align: center;">
-			<h1>Order List</h1>
-			<p>List of all past and present orders</p>
-		</div>
+	<div class="container" style="background-color: #403F3D; text-align:center;">
+		<div class="col-sm-12 p-5">
+		<h1>Order List</h1>
+		<p>List of all past and present orders</p>
 		<br>
 		<%
 			//Note: Forces loading of SQL Server driver
@@ -68,7 +83,7 @@
 
 				//create the table and print the header row
 				out.println(
-						"<table class=\"table-hover table-bordered\" style=\"margin:auto; width:50% !important;\"><thead><tr>");
+						"<table class=\"table table-hover table-borderless table-responsive-md\"><thead><tr>");
 				out.println("<th>Order Id</th><th>Order Date</th><th>Customer Id</th><th>Customer Name</th>"
 						+ "<th>Total Amount</th></tr></thead>");
 				ResultSet rst = stmt.executeQuery(sql);
@@ -102,9 +117,10 @@
 						out.println("</tr>");
 						//starts a new row for the nested product table
 						out.println("<tr align=\"right\"><td colspan=\"5\">"
-								+ "<button data-toggle=\"collapse\" data-target=\"#demo" + j
+								+ "<button data-toggle=\"collapse\" data-target=\"#prodList" + j
 								+ "\" type=\"button\" class=\"btn btn-secondary\">Click for list of products</button>"
-								+ "<div id=\"demo" + (j++) + "\" class=\"collapse\">" + "<table class=\"table-hover\">"
+								+ "<div id=\"prodList" + (j++) + "\" class=\"collapse\">" +
+								"<table class=\"table-hover\">"
 								+ "<thead><th>Product Id</th> <th>Quantity</th>" + "<th>Price</th></tr></thead>");
 					}
 					//prints product id, quantity and price
@@ -136,7 +152,7 @@
 
 			// Close connection
 		%>
-	</div>
+	</div></div>
 </body>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

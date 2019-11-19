@@ -22,6 +22,15 @@ body {
 	color: #F2E8DF;
 	text-align: center;
 }
+
+.table {
+	color: #F2E8DF;
+}
+
+.table-hover tbody tr:hover td {
+	background-color:#A6A29F;
+	color:#262524;
+}
 </style>
 </head>
 <body>
@@ -95,7 +104,7 @@ body {
 						conn.close();
 						try (Connection con = DriverManager.getConnection(url, uid, pw);) {
 							//determine if shopping cart is empty
-							if (productList.isEmpty()) {
+							if (productList==null || productList.isEmpty()) {
 								out.print("There are no products in the shopping cart");
 							} else {
 
@@ -137,7 +146,8 @@ body {
 									String productId = (String) product.get(0);
 									String price = (String) product.get(2);
 									double pr = Double.parseDouble(price);
-									int qty = ((Integer) product.get(3)).intValue();
+									int qty = (Integer.parseInt(product.get(3).toString()));
+									//int qty = (((Integer)product.get(3)).intValue());
 									//insert into orderproduct
 									String SQL6 = ("INSERT INTO OrderProduct (orderId, productId, quantity,"
 											+ " price) VALUES (?,?,?,?)");
@@ -149,16 +159,67 @@ body {
 									pstmt6.executeUpdate();
 								}
 								//calculate total amount from OrderProduct
-								String sqlTotal = "SELECT SUM(quantity*price) FROM OrderProduct " + "WHERE orderId = "
-										+ orderId;
-								Statement stTotal = con.createStatement();
-								ResultSet rsTotal = stTotal.executeQuery(sqlTotal);
+								String sqlTotal = "SELECT SUM(quantity*price) FROM OrderProduct " + "WHERE orderId = ?";
+								PreparedStatement pstTotal = con.prepareStatement(sqlTotal);
+								pstTotal.setInt(1,orderId);
+								ResultSet rsTotal = pstTotal.executeQuery();
 								rsTotal.next();
 								double totalAmount = rsTotal.getDouble(1);
 								//update OrderSummary with calculated total
-								String upTotal = "UPDATE OrderSummary SET totalAmount = " + totalAmount
-										+ " WHERE orderId = " + orderId;
-								stTotal.executeUpdate(upTotal);
+								String upTotal = "UPDATE OrderSummary SET totalAmount = ? WHERE orderId = ?";
+								PreparedStatement pUpTotal = con.prepareStatement(upTotal);
+								pUpTotal.setDouble(1,totalAmount);
+								pUpTotal.setInt(2,orderId);
+								pUpTotal.executeUpdate();
+								//print the table
+								NumberFormat currFormat = NumberFormat.getCurrencyInstance();
+								out.println("<h1>Your order:</h1>");
+								out.print("<table class=\"table table-hover table-responsive-md table-borderless\">"+
+								"<thead><tr><th>Product Id</th>"+
+								"<th>Product Name</th><th>Quantity</th>");
+								out.println("<th>Price</th><th>Subtotal</th></tr></thead>");
+
+								double total = 0;
+								Iterator<Map.Entry<String, ArrayList<Object>>> iteratorOrder = productList.entrySet().iterator();
+								while (iteratorOrder.hasNext()) {
+									Map.Entry<String, ArrayList<Object>> entry = iteratorOrder.next();
+									ArrayList<Object> product = (ArrayList<Object>) entry.getValue();
+									if (product.size() < 4) {
+										out.println("Expected product with four entries. Got: " + product);
+										continue;
+									}
+
+									out.print("<tr><td>" + product.get(0) + "</td>");
+									out.print("<td>" + product.get(1) + "</td>");
+
+									out.print("<td align=\"center\">" + product.get(3) + "</td>");
+									Object price = product.get(2);
+									Object itemqty = product.get(3);
+									double pr = 0;
+									int qty = 0;
+
+									try {
+										pr = Double.parseDouble(price.toString());
+									} catch (Exception e) {
+										out.println("Invalid price for product: " + product.get(0) + " price: " + price);
+									}
+									try {
+										qty = Integer.parseInt(itemqty.toString());
+									} catch (Exception e) {
+										out.println(
+												"Invalid quantity for product: " + product.get(0) + " quantity: " + qty);
+									}
+
+									out.print("<td align=\"right\">" + currFormat.format(pr) + "</td>");
+									out.print("<td align=\"right\">" + currFormat.format(pr * qty) + "</td></tr>");
+									out.println("</tr>");
+									total = total + pr * qty;
+								}
+								out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>"
+										+ "<td align=\"right\">" + currFormat.format(total) + "</td></tr>");
+								out.println("</table>");
+
+
 								//clear the shopping cart by setting productList attribute to null
 								session.setAttribute("productList",null);
 								out.println("<h1>Order submitted!</h1>");
@@ -180,20 +241,9 @@ body {
 					"<button type=\"reset\" class=\"btn btn-dark\">Reset</button>"+
 					"</div></div></form>");
 				}
-				//TODO: Print out customer order
-				// Determine if there are products in the shopping cart
-				// If either are not true, display an error message
+				//TODO:
 
-				// Make connection
-
-				// Save order information to database
-
-				// Update total amount for order record
 				// Each entry in the HashMap is an ArrayList with item 0-id, 1-name, 2-quantity, 3-price
-
-				// Print out order summary
-
-				// Clear cart if order placed successfully
 			%>
 			<br>
 			<a href="shop.html" class="btn btn-dark" role="button">Return
