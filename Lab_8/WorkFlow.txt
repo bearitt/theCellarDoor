@@ -21,10 +21,14 @@ Customer page
 ##Barret
 ###########################
 Admin/login page
-  check login
-  display user on main page
-  modify validatelogin
+#  check login
+#  display user on main page
+#  modify validatelogin
 Update format to match site in lab 7
+	Implement header on all pages
+	Create footer with js??
+#Create header page for navbar
+#Create custom css file
 ###########################
 ##Person 1
 ###########################

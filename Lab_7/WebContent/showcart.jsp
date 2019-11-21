@@ -7,29 +7,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Cellar Door - Your Shopping Cart</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<style>
-a:link, a:visited, a:hover, a:active, h1, h2, p {
-	color: #F2E8DF;
-}
-
-body {
-	color: #F2E8DF;
-}
-
-.btn-group {
-	vertical-align: middle;
-}
-
-.table-hover tbody tr:hover td {
-  background-color:#A6A29F;
-	color:#262524;
-}
-</style>
-</head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Cellar Door - Your Shopping Cart</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<style>
+	.btn-group {
+		vertical-align: middle;
+	}
+	</style>
+	</head>
 <body>
 <script>
 	function update(newid,newqty)
@@ -73,7 +61,7 @@ body {
 				HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session
 						.getAttribute("productList");
 				String delete = request.getParameter("delete");
-				if ((delete!=null && productList!=null) && (!delete.equals(-1) && productList.containsKey(delete)))
+				if ((delete!=null && productList!=null) && (!delete.equals("-1") && productList.containsKey(delete)))
 					productList.remove(delete);
 				String newId = request.getParameter("newid");
 				String newQty = request.getParameter("newqty");

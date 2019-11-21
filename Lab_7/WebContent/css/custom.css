@@ -1,0 +1,20 @@
+a:link, a:visited, a:hover, a:active {
+	color: #F2E8DF;
+}
+
+body {
+	color: #F2E8DF;
+}
+
+.table {
+	color: #F2E8DF;
+}
+
+.table-hover tbody tr:hover td {
+	background-color:#A6A29F;
+	color:#262524;
+}
+
+.container-fluid, container {
+	padding: 80px 120px;
+}

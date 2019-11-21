@@ -1,35 +1,15 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="java.text.NumberFormat"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ include file="jdbc.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Cellar - Order List</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<style>
-.container-fluid, container {
-	padding: 80px 120px;
-}
-
-body {
-	color: #F2E8DF;
-}
-
-.table {
-	color: #F2E8DF;
-}
-
-a:link, a:visited, a:hover, a:active {
-	color: #F2E8DF;
-}
-
-.table-hover tbody tr:hover td {
-  background-color:#A6A29F;
-	color:#262524;
-}
-</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Cellar - Order List</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -66,16 +46,8 @@ a:link, a:visited, a:hover, a:active {
 		<p>List of all past and present orders</p>
 		<br>
 		<%
-			//Note: Forces loading of SQL Server driver
-			try { // Load driver class
-				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			} catch (java.lang.ClassNotFoundException e) {
-				out.println("ClassNotFoundException: " + e);
-			}
-			String uid = "bjackson";
-			String pw = "66122573";
-			String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_bjackson;";
-			try (Connection con = DriverManager.getConnection(url, uid, pw); Statement stmt = con.createStatement();) {
+			try {
+				getConnection();
 				String sql = "SELECT O.orderId, orderDate, C.customerId, CONCAT(firstName, ' ', lastName) "
 						+ "AS name, totalAmount, P.productId, quantity, price "
 						+ "FROM ordersummary O JOIN customer C ON O.customerId = C.customerId "
@@ -86,6 +58,7 @@ a:link, a:visited, a:hover, a:active {
 						"<table class=\"table table-hover table-borderless table-responsive-md\"><thead><tr>");
 				out.println("<th>Order Id</th><th>Order Date</th><th>Customer Id</th><th>Customer Name</th>"
 						+ "<th>Total Amount</th></tr></thead>");
+				Statement stmt = con.createStatement();
 				ResultSet rst = stmt.executeQuery(sql);
 				String last = null;
 				NumberFormat currFormat = NumberFormat.getCurrencyInstance();
@@ -132,6 +105,8 @@ a:link, a:visited, a:hover, a:active {
 
 			} catch (SQLException e) {
 				System.err.println(e);
+			} finally {
+				closeConnection();
 			}
 
 			// Useful code for formatting currency values:

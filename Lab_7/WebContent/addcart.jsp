@@ -1,5 +1,6 @@
 <%@ page import="java.util.HashMap"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ include file="jdbc.jsp" %>
 <%
 	// Get the current list of products
 	@SuppressWarnings({ "unchecked" })

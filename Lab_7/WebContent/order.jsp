@@ -9,29 +9,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Cellar Door - Thank you for your order!</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<style>
-a:link, a:visited, a:hover, a:active {
-	color: #F2E8DF;
-}
-
-body {
-	color: #F2E8DF;
-	text-align: center;
-}
-
-.table {
-	color: #F2E8DF;
-}
-
-.table-hover tbody tr:hover td {
-	background-color:#A6A29F;
-	color:#262524;
-}
-</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Cellar Door - Thank you for your order!</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
