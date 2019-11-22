@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>The Cellar Door - Products</title>
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="css/custom.css">
-  	<style>
-  	  .carousel-inner img{
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Cellar Door - Homepage</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <style>
+    .carousel-inner img{
       -webkit-filter: grayscale(90%);
       filter:grayscale(90%);
       margin:auto;
       width:100%;
     }
-  	</style>
-  </head>
+
+    a:link,a:visited,a:hover,a:active {
+      color:#F2E8DF;
+    }
+  </style>
+</head>
 <body>
-<%@ include file="header.jsp" %>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="shop.html">The Cellar Door</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="shop.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listorder.jsp">Orders List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listprod.jsp">Product List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="showcart.jsp">Your Shopping Cart</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="listprod.jsp" method="get">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="productName">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search for Product</button>
+      </form>
+    </div>
+  </nav>
 <div class="container" style="background-color:#A6A29F">
   <div class="row">
         <div class="col-sm-12 p-5">
@@ -75,16 +104,8 @@
 	<div class="container" style="background-color: #403F3D">
 		<div class="row">
 			<div class="col-sm-8 p-5">
-        <%
-        String username = (String) session.getAttribute("fullname");
-        if(username != null) {
-        	out.println("Welcome to the Cellar Door " + username +
-          ", the only place for all of your wine shopping needs</p>");
-        } else {
-          out.println("<p>Welcome to the Cellar Door, the only" +
-  					" place for all of your wine shopping needs</p>");
-        }
-        %>
+				<p style="color: #F2E8DF">Welcome to the Cellar Door, the only
+					place for all of your wine shopping needs</p>
 			</div>
 			<div class="col-sm-4 p-5">
 				<h2 align="center">
@@ -93,21 +114,11 @@
 				<h2 align="center">
 					<a href="listorder.jsp">List All Orders</a>
 				</h2>
-        <h2 align="center"><a href="login.jsp">Login</a></h2>
-
-        <h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
-
-        <h2 align="center"><a href="admin.jsp">Administrators</a></h2>
-
-        <h2 align="center"><a href="logout.jsp">Log out</a></h2>
 			</div>
 		</div>
 	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
-
-
 
 </body>
 </head>

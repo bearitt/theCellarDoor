@@ -1,0 +1,11 @@
+Create custom 404 page
+Finish update quantity
+Log all new products
+Change ddl customer -> user
+	add boolean attribute admin
+	admin only access to admin fields
+Add new user page
+Admin
+	Add new product
+	Change product availability
+		boolean attribute available in relation??

@@ -38,11 +38,12 @@
 			PreparedStatement psAuth = con.prepareStatement(sqlAuth);
 			psAuth.setString(1, username);
 			ResultSet rsAuth = psAuth.executeQuery();
-			int count = 0;
-			while(rsAuth.next())
-				++count;
-			if(count>0)
+			
+			if(rsAuth.next()) {
 				retStr = username;
+				String firstAndLastName = rsAuth.getString(2) + " " + rsAuth.getString(3);
+				session.setAttribute("fullname",firstAndLastName);
+			}
 			// TODO: Check if userId and password match some customer account. If so, set retStr to be the username.
 		}
 		catch (SQLException ex) {

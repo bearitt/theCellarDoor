@@ -22,11 +22,18 @@ Customer page
 ###########################
 Admin/login page
 #  check login
-#  display user on main page
+# display user on main page (currently printing userid)
 #  modify validatelogin
 Update format to match site in lab 7
 	Implement header on all pages
 	Create footer with js??
+	#change href in header to index.jsp
+	#add new links to navbar
+	#implement grayscaling in index.jsp
+	#implement dropdown bar for login
+add if statement to product page for image display
+upload final version to server
+rotate table on customer.jsp
 #Create header page for navbar
 #Create custom css file
 ###########################

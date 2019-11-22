@@ -1,7 +1,7 @@
 <%@ page trimDirectiveWhitespaces="true" import="java.sql.*,java.io.*" %><%@ include file="jdbc.jsp" %><%
 
 // Indicate that we are sending a JPG picture
-response.setContentType("image/jpeg");  
+response.setContentType("image/jpeg");
 
 // Get the image id
 String id = request.getParameter("id");
@@ -15,13 +15,13 @@ try{
 }
 catch(Exception e)
 {	out.println("Invalid image id: "+id+" Error: "+e);
-	return; 
+	return;
 }
 
 // TODO: Modify SQL to retrieve productImage given productId
-String sql = "";
+String sql = "SELECT productImage FROM product WHERE productId = ?";
 
-try 
+try
 {
 	getConnection();
 	PreparedStatement stmt = con.prepareStatement(sql);
@@ -42,9 +42,9 @@ try
 			ostream.write(data, 0, count);
 
 		ostream.flush();
-		istream.close();					
+		istream.close();
 	}
-} 
+}
 catch (SQLException ex) {
 	out.println(ex);
 }

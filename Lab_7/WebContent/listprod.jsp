@@ -2,7 +2,7 @@
 <%@ page import="java.text.NumberFormat"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
 <%@ include file="jdbc.jsp" %>
-<%@ include file="header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
-
+<%@ include file="header.jsp" %>
 	<div class="container" style="background-color: #403F3D;">
 		<div class="row">
 			<div class="col-sm-9">
@@ -63,7 +63,7 @@
 					while (rst.next()) {
 						String category = rst.getString(2);
 						if (last == null || !last.equals(category)) {
-							i++;
+							++i;
 							last = category;
 						}
 
@@ -72,9 +72,10 @@
 								+ "&name=" + rst.getString(1) + "&price=" + rst.getString(3) + "\">Add to Cart</a></td>"
 								+ "<td>" + rst.getString(1) + "</td><td>" + category + "</td><td>"
 								+ currFormat.format(rst.getDouble(3)) + "</td></tr>");*/
-						out.println("<tr style=\"background-color:" + rowColours[counter] + "\"><td><a href=\"addcart.jsp?id=" + rst.getString(4)
-								+ "&name=" + rst.getString(1) + "&price=" + rst.getString(3) + "\">Add to Cart</a></td>"
-								+ "<td>" + rst.getString(1) + "</td><td>" + category + "</td><td>"
+						out.println("<tr style=\"background-color:" + rowColours[counter] + "\"><td><a href=\"addcart.jsp?id=" +
+						 		rst.getString(4) + "&name=" + rst.getString(1) + "&price=" + rst.getString(3) + "\">Add to Cart</a></td>"
+								+ "<td><a href=\"product.jsp?id=" + rst.getString(4)+ "\">" + rst.getString(1) +
+								"</a></td><td>" + category + "</td><td>"
 								+ currFormat.format(rst.getDouble(3)) + "</td></tr>");
 					}
 				} catch (SQLException e) {
