@@ -64,12 +64,15 @@ public class test {
 //			}
 			try(Connection con = DriverManager.getConnection(url,uid,pw); 
 					Statement stmt = con.createStatement()) {
-				String sql = "SELECT * FROM incart";
+				String sql = "SELECT productImageURL FROM product";
 				ResultSet rst = stmt.executeQuery(sql);
 //				while(rst.next()) {
 //					System.out.println(rst.getString(11));
 //				}
-				System.out.println(rst.next()? "Has next" : "Doesn't have next");
+				//System.out.println(rst.next()? "Has next" : "Doesn't have next");
+				while(rst.next()) {
+					System.out.println(rst.getString(1));
+				}
 			} catch(SQLException e) {
 				System.err.println(e);
 			}
