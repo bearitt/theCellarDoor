@@ -121,7 +121,7 @@
 		<div class="col-sm-12 p-5">
 			<div class="btn-group btn-group-lg">
 				<a href="showcart.jsp?delete=-1" class="btn btn-secondary" role="button">Clear Cart</a>
-				<a href="checkout.jsp" class="btn btn-secondary" role="button">Check Out</a>
+				<a href="order.jsp" class="btn btn-secondary" role="button">Check Out</a>
 				<a href="listprod.jsp" class="btn btn-secondary" role="button">Continue Shopping</a>
 			</div>
 		</div>
