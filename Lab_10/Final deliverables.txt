@@ -34,15 +34,15 @@ Barret
 #Scripting csv file upload
 #Upload images to db
 #Modify header for logged in user
-%Finish update quantity
+#Finish update quantity
 Optional everything
 SHA-512 for password protect?
+Store cart in DB between sessions
 
 Aleks
 ---------
 Convert images 16-28
 Browse products by category
-%Finish update quantity
 Update executive summary
 Write system features review
 Walkthrough with screenshots
@@ -50,15 +50,12 @@ Walkthrough with screenshots
 Karim
 ---------
 Convert images 29-41
-%Finish update quantity
 Create user account
 List all orders for logged in user
 Create reviews for product page
 
 Jake
 ---------
-Convert images 42-54
-%Finish update quantity
 Update ddl customer -> user
 Create boolean field admin
 Admin
