@@ -4,7 +4,7 @@ public class productBackup {
 
 	public static void main(String[] args) {
 		
-		String dest = "C:\\Users\\barre_000\\Desktop\\testfile.csv";
+		String dest = "testfile.csv";
 		System.out.println(writeCsv(dest));
 	}
 	

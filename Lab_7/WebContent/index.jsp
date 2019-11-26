@@ -79,10 +79,11 @@
         String username = (String) session.getAttribute("fullname");
         if(username != null) {
         	out.println("Welcome to the Cellar Door " + username +
-          ", the only place for all of your wine shopping needs</p>");
+          ", the premiere wine shop showcasing fine wines from BC" +
+          " and around the world.</p>");
         } else {
-          out.println("<p>Welcome to the Cellar Door, the only" +
-  					" place for all of your wine shopping needs</p>");
+          out.println("<p>Welcome to the Cellar Door, the premiere wine shop" +
+        " showcasing fine wines from BC and around the world.</p>");
         }
         %>
 			</div>
@@ -110,4 +111,3 @@
 
 
 </body>
-</head>

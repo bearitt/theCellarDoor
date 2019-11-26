@@ -42,3 +42,25 @@ medium-light  #A6A29F
 
 <!--Ideas for final project-->
 -admin can grant privileges to certain users
+
+
+<!--Dimensions for photos-->
+300x500px
+watermark:
+  Top:430
+  Left:250
+  Width:40
+  Height:57
+  Transparency:50
+<!--Product categories-->
+1 - Red Wine
+2 - Rose
+3 - White Wine
+4 - Sparkling Wine
+5 - Dessert Wine
+6 - Accessories
+<!--Dimensions for logo-->
+x:60
+y:100
+W:100.112
+H:142.049
