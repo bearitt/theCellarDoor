@@ -36,14 +36,15 @@ ResultSet rs = pstmt.executeQuery();
 //end
 if (rs.next()){
 	if(rs.getString(4)!=null&&!rs.getString(4).equals(""))
-		out.print("<img src=\"displayImage.jsp?id="+productId+"\">");
-	if(rs.getString(5)!=null&&!rs.getString(5).equals(""))
-		out.print("<img src=\""+rs.getString(5)+"\">");	
+		out.print("<img src=\"displayImage.jsp?id="+productId+"\" height=\"533\" width=\"300\">");
+	if(rs.getString(6)!=null&&!rs.getString(6).equals("")&&!rs.getString(6).equals("null"))
+		out.print("<img src=\""+rs.getString(6)+"\">");	
+	NumberFormat currFormat = NumberFormat.getCurrencyInstance();
 	%>
 	
 	<%out.print("<br><a href=\"addcart.jsp?id=" +
 			rs.getString(2) + "&name=" + rs.getString(1) + "&price=" +
-			rs.getString(3) + "\"><h2>Add to Cart</h2></a></td>");%>
+			rs.getString(3) + "\"><h2><i class=\"fas fa-cart-plus\"></i>Add to Cart</h2></a></td>");%>
 	<h2><a href="listprod.jsp">Continue shopping</a></h2>
 	</div>
 	<div class="col-lg-4 col-sm-12 p-5">
@@ -61,7 +62,7 @@ if (rs.next()){
 			</tr>
 			<tr>
 				<td><strong>Price: </strong></td>
-				<td><%out.print(rs.getString(3));%></td>
+				<td><%out.print(currFormat.format(rs.getDouble(3)));%></td>
 			</tr>
 			<tr>
 				<td colspan="2">
@@ -92,5 +93,6 @@ if (rs.next()){
 </div>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/e9d963041d.js" crossorigin="anonymous"></script>
 </body>
 </html>

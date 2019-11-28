@@ -3,7 +3,7 @@
   <head>
   	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>The Cellar Door - Products</title>
+  	<title>The Cellar Door - Homepage</title>
   	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   	<link rel="stylesheet" type="text/css" href="css/custom.css">
   	<style>

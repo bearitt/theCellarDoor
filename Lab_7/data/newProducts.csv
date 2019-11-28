@@ -1,56 +1,56 @@
 productId,productName,productPrice,productImageURL,productImage,productDesc,categoryId
-1,Kitsch Pinot Noir,69,,,"An elegant, light bodied wine with a ton of red fruit and an earthy undertone",1
-2,Sandhill Sangiovese,42.5,,,"An intense, structured wine, great with grilled meats and tomato sauces",1
-3,Ursa Major Syrah,48.25,,,"Naturally fermented, the peppery dark fruit complements a funky nose",1
-4,Stag's Hollow Tempranillo,37.25,,,"Lively red fruit and a light body with round, mellow tannins",1
-5,Kettle Valley Cabernet Sauvignon,32.5,,,"A cooler climate cab, medium bodied with great acid and an herbal finish",1
-6,Le Vieux Pin Syrah,48.75,,,"In the Rhone Valley tradition, white pepper and a slight gaminess complement the black currant",1
-7,Rust Zinfandel,36.5,,,"Intense but silky tannins lead to jammy raspberry, blackberry, and dark cherry",1
-8,La Stella Allegretto Merlot,58.65,,,"Intensely structured, this wine needs a few years to soften the astringent dark fruit",1
-9,Laughing Stock Blind Trust Blend,34.78,,,"A Meritage blend intended for early consumption, round fruits and mellow tannins",1
+1,Kitsch Pinot Noir,69,,,An elegant light bodied wine with a ton of red fruit and an earthy undertone,1
+2,Sandhill Sangiovese,42.5,,,An intensely structured wine; great with grilled meats and tomato sauces,1
+3,Ursa Major Syrah,48.25,,,Naturally fermented; the peppery dark fruit complements a funky nose,1
+4,Stag's Hollow Tempranillo,37.25,,,Lively red fruit and a light body with round and mellow tannins,1
+5,Kettle Valley Cabernet Sauvignon,32.5,,,A cooler climate cab; medium bodied with great acid and an herbal finish,1
+6,Le Vieux Pin Syrah,48.75,,,In the Rhone Valley tradition; white pepper and a slight gaminess complement the black currant,1
+7,Rust Zinfandel,36.5,,,Intense but silky tannins lead to jammy raspberry with blackberry and dark cherry,1
+8,La Stella Allegretto Merlot,58.65,,,Intensely structured; this wine needs a few years to soften the astringent dark fruit,1
+9,Laughing Stock Blind Trust Blend,34.78,,,A Meritage blend intended for early consumption; round fruits and mellow tannins,1
 10,Spearhead Pinot Noir Cuvee,36.52,,,Ripe red fruit and structure make this wine a great pairing for lighter meats,1
-11,Moon Curser Tempranillo,32.94,,,"An expression of the Osoyoos desert climate, the ripe tannins of this wine pair beatifully with dark chocolate",1
-12,Summerhill Keter Blend,55.31,,,"The power of the pyramid imbues this wine with mystical qualities (also, Justin Trudeau liked it)",1
-13,Caduceus Nagual de la Naga Blend,65.46,,,"In the mountains of Jerome, Arizona, winery owner James Maynard Keenan fought off wild boar with a shotgun to protect the grapes that made this wine",1
-14,Kismet Mantra Blend,46.78,,,"A focused, Syrah based blend, this wine pairs amazingly well with their restaurant's Lamb Malbar Curry",1
-15,Kitsch Pinot Noir Rose,25,,,"Perfect for summer days, this wine is somehow light bodied and creamy with fresh watermelon and field strawberry flavours",2
-16,Painted Rock Rose,22.34,,,"A medium bodied rose, notes of stewed raspberry and cherry tart",2
-17,Roche Rose,24.98,,,"An odd blend of 95% Zweigelt and 5% Schonberger, this rose is a favourite of Barb Phillip MW",2
-18,Poplar Grove Blanc de Noirs,24.9,,,"Saignee method Malbec and Merlot, rich body with raspberry and sweet pink grapefruit, clean finish",2
-19,50th Parallel Pinot Noir Rose,22.47,,,"Light bodied with sour cherry, grapefruit and satsuma",2
-20,The Hatch Dynasty White Blend,32.69,,,"In the winemaker's words ""made for the pure, hedonistic sake"" of the wine itself",3
-21,Haywire Free Form Sauvignon Blanc,28.72,,,"Naturally fermented in concrete eggs, the lees contact adds richness to key lime and gooseberry",3
-22,The Hatch The Orange Order,24.29,,,"A trip on the palette, a light bodied Chardonnay with full skin contact, adding astringency and a bergamot nose",3
-23,Roche Chardonnay,26.87,,,"Fermenting in French oak, malolactic fermantation, and finishing with lees contact gives a buttery creaminess to add to the natural citrus notes of the Chardonnay",3
-24,Da Silva Fume Blanc,28.92,,,"Sauvignon Blanc aged in French oak, toffee and caramel complement the natural acidity of the grape",3
-25,Lock and Worth Sauvignon Blanc,24.98,,,"Fermented and aged in neutral French oak barrels, a funky, creamy complexity adds to the lime peel and margarita flavours",3
+11,Moon Curser Tempranillo,32.94,,,An expression of the Osoyoos desert climate; the ripe tannins of this wine pair beatifully with dark chocolate,1
+12,Summerhill Keter Blend,55.31,,,The power of the pyramid imbues this wine with mystical qualities (also Justin Trudeau liked it),1
+13,Caduceus Nagual de la Naga Blend,65.46,,,In the mountains of Jerome Arizona winery owner James Maynard Keenan fought off wild boar with a shotgun to protect the grapes that made this wine,1
+14,Kismet Mantra Blend,46.78,,,A focused Syrah based blend; this wine pairs amazingly well with their restaurant's Lamb Malbar Curry,1
+15,Kitsch Pinot Noir Rose,25,,,Perfect for summer days; this wine is somehow light bodied and creamy with fresh watermelon and field strawberry flavours,2
+16,Painted Rock Rose,22.34,,,A medium bodied rose; notes of stewed raspberry and cherry tart,2
+17,Roche Rose,24.98,,,An odd blend of 95% Zweigelt and 5% Schonberger; this rose is a favourite of Barb Phillip MW,2
+18,Poplar Grove Blanc de Noirs,24.9,,,Saignee method Malbec and Merlot; rich body with raspberry and sweet pink grapefruit and a clean finish,2
+19,50th Parallel Pinot Noir Rose,22.47,,,Light bodied with grapefruit and satsuma notes,2
+20,The Hatch Dynasty White Blend,32.69,,,"In the winemaker's words \""made for the pure hedonistic sake\"" of the wine itself",3
+21,Haywire Free Form Sauvignon Blanc,28.72,,,Naturally fermented in concrete eggs; the lees contact adds richness to key lime and gooseberry,3
+22,The Hatch The Orange Order,24.29,,,A trip on the palette; a light bodied Chardonnay with full skin contact which adds astringency and a bergamot nose,3
+23,Roche Chardonnay,26.87,,,Fermenting in French oak with malolactic fermantation and finishing with lees contact gives a buttery creaminess to add to the natural citrus notes of the Chardonnay,3
+24,Da Silva Fume Blanc,28.92,,,Sauvignon Blanc aged in French oak; toffee and caramel complement the natural acidity of the grape,3
+25,Lock and Worth Sauvignon Blanc,24.98,,,Fermented and aged in neutral French oak barrels; a funky and creamy complexity adds to the lime peel and margarita flavours,3
 26,Crown and Thieves Chenin Blanc,32.78,,,The bracing acidity of Chenin Blanc is softened by a short period on the lees,3
 27,Kitsch Esther's Block Riesling,25,,,Lime margarita and Sour Patch Kids flavours make this a perfect pairing with fish dishes like ceviche or sushi,3
 28,TH Wines Riesling,24.5,,,Bright lime citrus with a sharp acidity lend a versatility to this wine with food pairings,3
-29,Hainle Savignin Blanc,27.62,,,"We didn't misspell Sauvignon Blanc! Savignin Blanc is the parent grape of both Riesling and Gewurztraminer, with a light body and beatiful citrus bouquet",3
-30,Summerhill Cipes Ariel,86.55,,,"Possibly one of the coolest bottles of sparkling wine you'll ever see, this traditional method sparkling spent 13 years on the lees, lending a rich brioche and lemon custard flavour",4
-31,Tantalus Old Vines Riesling Brut,36.72,,,"Traditional method Riesling, only spending a short time on the lees retains the bright, citrus character of the Riesling but with a creamy mousse",4
-32,Kitsch Blanc de Blanc,35,,,"100% estate grown East Kelowna Chardonnay, Traditional method, 3 years on the lees. Pop a bottle and celebrate dammit!",4
-33,Summerhill Cipes Traditional Cuvee,100,,,"Tradtional method with Champagne varieties, this opulent sparkling has a note of dill on the nose. For high rollers",4
-34,Okanagan Crush Pad Narrative Ancient Method,43.76,,,"Ancient method, fully fermented in the bottle, this wine is a great example of the unconventional style of OK Crush Pad",4
+29,Hainle Savignin Blanc,27.62,,,We didn't misspell Sauvignon Blanc! Savignin Blanc is the parent grape of both Riesling and Gewurztraminer and has a light body and beatiful citrus bouquet,3
+30,Summerhill Cipes Ariel,86.55,,,Possibly one of the coolest bottles of sparkling wine you'll ever see! This traditional method sparkling spent 13 years on the lees lending a rich brioche and lemon custard flavour,4
+31,Tantalus Old Vines Riesling Brut,36.72,,,Traditional method Riesling; only spending a short time on the lees retains the bright citrus character of the Riesling but with a creamy mousse,4
+32,Kitsch Blanc de Blanc,35,,,100% estate grown East Kelowna Chardonnay; Traditional method with 3 years on the lees. Pop a bottle and celebrate dammit!,4
+33,Summerhill Cipes Traditional Cuvee,100,,,Tradtional method with Champagne varieties; this opulent sparkling has a note of dill on the nose. For high rollers,4
+34,Okanagan Crush Pad Narrative Ancient Method,43.76,,,Done in the Ancient method (fully fermented in the bottle) this wine is a great example of the unconventional style of OK Crush Pad,4
 35,Fitzpatrick Fitz Brut,28.24,,,This lively brut is the perfect companion for a hot summer day on the patio,4
-36,Summerhill Cipes Blanc de Noir,34.21,,,"White sparkling wine from Pinot Noir grapes, raspberry Campino candies with a little funk",4
-37,Dessert Hills Ambassador Port (style wine),48.72,,,"It's not Port, it's Port-style wine (try suing us now Portugal!). Opulent dark fruit and sweet spice, enjoy in front of a fireplace in a velvet robe",5
-38,Chateau D'armajan Sauternes,52.78,,,"The OGs of the botrytis game, this Sauvignon Blanc dessert wine is exactly what it should be: luscious, packed with citrus, and totally funky",5
-39,Lake Breeze Chinook,36.78,,,"A fortified Ehrenfelser, a juxtaposition of tropical fruit, luscious sweetness, and a biting finish",5
-40,Stag's Hollow Royal,47.23,,,"Always one to defy expectations, this winery's solera-aged Muscat resists labels",5
-41,Spearhead Botrytis Affected Late Harvest Riesling,34.68,,,"A happy accident: a few days of dense fog allowed Botrytis to infect a small portion of the Riesling crop, resulting in beautiful funkiness",5
-42,Hainle Riesling Icewine,105.92,,,"The first winery to make Icewine in Canada in 1976, their current winemaker follows his ancestor's instructions in a book written in German from the 1400s",5
-43,Stoneboat Verglas,68.72,,,"The name referring to the thin sheet of ice that covers frozen grapes, this winery was doubly lucky having both the conditions for Botrytis to develop as well as Icewine temperatures",5
-44,La Frenz Tawny,34.67,,,"Using a solera system, this Tawny Port-style wine is the perfect accompaniment to Christmas Eve by a fireplace",5
-45,D'Angelo Dolce Vita Rosso,37.92,,,"Start with Naramata grown Tempranillo, fortify with brandy made from the same grapes, and finish with a pinch of Tempranillo Icewine and you end up with a totally unique wine",5
-46,Okanagan Crush Pad Narrative Fortified,47.87,,,"The epitome of DIY, Syrah and Merlot is fermented in concrete eggs, then fortified with brandy made on-site",5
-47,Riesling Degustazione Glass,26.99,,,"Classic but elegant, hand-blown crystal allows you to enjoy your fine vintage in style",6
-48,Riesling Ouverture Double Magnum Glass,47.99,,,"Your friend Jim with the $10,000 Bordeaux collection will find these glasses ""acceptable""",6
-49,Classic White Glass,12.99,,,"Pour a glass of Chardonnay, and find a Ryan Reynolds movie on Netflix",6
-50,ISO Glass - WSET Edition,4.99,,,"Small but mighty, feel like a professional using these WSET approved tasting glasses. Also great for Port!",6
-51,K Glass,8,,,"You might not be able to swirl well with them, but who cares when you slay rose on the patio",6
-52,Wine Pump,24.99,,,"Pump out that nasty oxygen, keeping your wine fresher longer. Includes three pump caps",6
-53,Waiter's Corkscrew,10.99,,,"A waiter and bartender's best friend, this crank will never let you down when you're in the weeds",6
+36,Summerhill Cipes Blanc de Noir,34.21,,,White sparkling wine from Pinot Noir grapes; raspberry Campino candies with a little funk,4
+37,Dessert Hills Ambassador Port (style wine),48.72,,,It's not Port: it's Port-style wine (try suing us now Portugal!). Opulent dark fruit and sweet spice; enjoy in front of a fireplace in a velvet robe,5
+38,Chateau D'armajan Sauternes,52.78,,,The OGs of the botrytis game this Sauvignon Blanc dessert wine is exactly what it should be: luscious but packed with citrus and totally funky,5
+39,Lake Breeze Chinook,36.78,,,A fortified Ehrenfelser: a juxtaposition of tropical fruit luscious sweetness and a biting finish,5
+40,Stag's Hollow Royal,47.23,,,Always one to defy expectations; this winery's solera-aged Muscat resists labels,5
+41,Spearhead Botrytis Affected Late Harvest Riesling,34.68,,,A happy accident: a few days of dense fog allowed Botrytis to infect a small portion of the Riesling crop resulting in beautiful funkiness,5
+42,Hainle Riesling Icewine,105.92,,,The first winery to make Icewine in Canada in 1976; their current winemaker follows his ancestor's instructions in a book written in German from the 1400s,5
+43,Stoneboat Verglas,68.72,,,The name referring to the thin sheet of ice that covers frozen grapes this winery was doubly lucky having both the conditions for Botrytis to develop as well as Icewine temperatures,5
+44,La Frenz Tawny,34.67,,,Using a solera system this Tawny Port-style wine is the perfect accompaniment to Christmas Eve by a fireplace,5
+45,D'Angelo Dolce Vita Rosso,37.92,,,Start with Naramata grown Tempranillo then fortify with brandy made from the same grapes and finish with a pinch of Tempranillo Icewine. Result: a totally unique wine,5
+46,Okanagan Crush Pad Narrative Fortified,47.87,,,The epitome of DIY: Syrah and Merlot is fermented in concrete eggs then fortified with brandy made on-site,5
+47,Riesling Degustazione Glass,26.99,,,Classic but elegant; hand-blown crystal allows you to enjoy your fine vintage in style,6
+48,Riesling Ouverture Double Magnum Glass,47.99,,,"Your friend Jim with the $10000 Bordeaux collection will find these glasses ""acceptable""",6
+49,Classic White Glass,12.99,,,Pour a glass of Chardonnay and find a Ryan Reynolds movie on Netflix,6
+50,ISO Glass - WSET Edition,4.99,,,Small but mighty; feel like a professional using these WSET approved tasting glasses. Also great for Port!,6
+51,K Glass,8,,,You might not be able to swirl well with them but who cares when you slay rose on the patio,6
+52,Wine Pump,24.99,,,Pump out that nasty oxygen keeping your wine fresher longer. Includes three pump caps,6
+53,Waiter's Corkscrew,10.99,,,A waiter and bartender's best friend this crank will never let you down when you're in the weeds,6
 54,Chrome Ratchet Corkscrew,38.99,,,For when you're dressed to impress and a simple waiter's corkscrew won't do,6
 55,Canvas Bag,2,,,Save the environment in style. Holds two bottles!,6

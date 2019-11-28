@@ -22,13 +22,13 @@ public class imageUpload {
 		try (Connection con = DriverManager.getConnection(url, uid, pw); Statement stmt = con.createStatement()) {
 			String upprod = "UPDATE product SET productImage = ? WHERE productId = ?";
 			PreparedStatement prep = con.prepareStatement(upprod);
-			for (int i = 1; i < 47; ++i) {
+			for (int i = 1; i <= 55; ++i) {
 				File img = new File(".\\WebContent\\img\\" + i + ".jpg");
 				FileInputStream input = new FileInputStream(img);
 				prep.setBinaryStream(1, input);
 				prep.setInt(2, i);
 				prep.executeUpdate();
-				System.out.println("Image successfully uploaded!");
+				System.out.println("Image "+i+" successfully uploaded!");
 				input.close();
 			}
 

@@ -83,12 +83,11 @@
 						Map.Entry<String, ArrayList<Object>> entry = iterator.next();
 						product = (ArrayList<Object>) entry.getValue();
 						if (product.size() < 4) {
-							out.println("Expected product with four entries. Got: " + product);
+							//out.println("Expected product with four entries. Got: " + product);
 							continue;
 						}
 						//make orderId read only
-						out.print("<tr><td><input type=\"text\" class=\"form-control\"" + " name=\"newid\" value=\""
-								+ product.get(0) + "\" readonly>");
+						out.print("<tr><td>"+product.get(0)+"</td>");
 						out.print("<td>" + product.get(1) + "</td>");
 						//form for changing quantity (my code)
 						//out.print("<td><input type=\"text\" class=\"form-control\""+
@@ -97,8 +96,6 @@
 						// allow customer to change quantities for a product in their shopping cart
 						out.print("<td><input type=\"text\" name=\"newqty" + count + "\" size=\"3\" value=\""
 								+ product.get(3) + "\" class=\"form-control\"></td>");
-
-						out.println("</tr>");
 
 						Object price = product.get(2);
 						Object itemqty = product.get(3);

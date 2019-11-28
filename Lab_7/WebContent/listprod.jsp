@@ -49,7 +49,7 @@
 					String[] rowColours = { "#736E6C", "#403F3D", "#262524" };
 					String sql = "SELECT productName,categoryName,productPrice,productId "
 							+ "FROM product P JOIN category C ON C.categoryId=P.categoryId "
-							+ "WHERE productName LIKE ? ORDER BY categoryName ASC";
+							+ "WHERE productName LIKE ? ORDER BY C.categoryId ASC";
 					pstmt = con.prepareStatement(sql);
 					pstmt.setString(1, "%" + name + "%");
 					rst = pstmt.executeQuery();

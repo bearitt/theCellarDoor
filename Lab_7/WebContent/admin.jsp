@@ -15,6 +15,7 @@
 </head>
 <body>
   <%@ include file="auth.jsp"%>
+  <%@ include file="adminAuth.jsp"%>
   <%@ include file="header.jsp"%>
   <div class="container" style="background-color: #403F3D;">
   		<div class="row">

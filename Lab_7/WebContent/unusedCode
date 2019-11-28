@@ -64,3 +64,14 @@ x:60
 y:100
 W:100.112
 H:142.049
+<!--Algorithm for saving cart-->
+user logs in
+ ->session attributes: full name, validated, userid
+ check db for cart
+  yes, create arraylist with cart items
+  no, exit
+addcart
+  add item to arraylist
+  ->check for validated
+    yes, add item to db
+    no, exit

@@ -17,7 +17,6 @@
 <link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
 <body>
-	<%@ include file="auth.jsp"%>
 	<%@ include file="header.jsp"%>
 	<div class="container" style="background-color: #403F3D">
 		<div class="col-sm-12 p-5">
@@ -58,6 +57,7 @@
 					<button type="submit" id="btnLogin"
 						class="btn btn-secondary btn-sm">Login</button>
 				</form>
+				<h2>Or <a href="newCustomer.jsp">sign up for an account!</a></h2>
 			</div>
 			<%
 				conn.close();
@@ -107,20 +107,22 @@
 									//traverses through the hashmap with array values = 0-id, 1-name, 2-quantity, 3-price
 									Map.Entry<String, ArrayList<Object>> entry = iterator.next();
 									ArrayList<Object> product = (ArrayList<Object>) entry.getValue();
-									String productId = (String) product.get(0);
-									String price = (String) product.get(2);
-									double pr = Double.parseDouble(price);
-									int qty = (Integer.parseInt(product.get(3).toString()));
-									//int qty = (((Integer)product.get(3)).intValue());
-									//insert into orderproduct
-									String SQL6 = ("INSERT INTO OrderProduct (orderId, productId, quantity,"
-											+ " price) VALUES (?,?,?,?)");
-									PreparedStatement pstmt6 = con.prepareStatement(SQL6);
-									pstmt6.setInt(1, orderId);
-									pstmt6.setString(2, productId);
-									pstmt6.setInt(3, qty);
-									pstmt6.setDouble(4, pr);
-									pstmt6.executeUpdate();
+									if(product.size()!=0) {
+										String productId = (String) product.get(0);
+										String price = (String) product.get(2);
+										double pr = Double.parseDouble(price);
+										int qty = (Integer.parseInt(product.get(3).toString()));
+										//int qty = (((Integer)product.get(3)).intValue());
+										//insert into orderproduct
+										String SQL6 = ("INSERT INTO OrderProduct (orderId, productId, quantity,"
+												+ " price) VALUES (?,?,?,?)");
+										PreparedStatement pstmt6 = con.prepareStatement(SQL6);
+										pstmt6.setInt(1, orderId);
+										pstmt6.setString(2, productId);
+										pstmt6.setInt(3, qty);
+										pstmt6.setDouble(4, pr);
+										pstmt6.executeUpdate();
+									}
 								}
 								//calculate total amount from OrderProduct
 								String sqlTotal = "SELECT SUM(quantity*price) FROM OrderProduct " + "WHERE orderId = ?";
@@ -149,7 +151,7 @@
 									Map.Entry<String, ArrayList<Object>> entry = iteratorOrder.next();
 									ArrayList<Object> product = (ArrayList<Object>) entry.getValue();
 									if (product.size() < 4) {
-										out.println("Expected product with four entries. Got: " + product);
+										//out.println("Expected product with four entries. Got: " + product);
 										continue;
 									}
 

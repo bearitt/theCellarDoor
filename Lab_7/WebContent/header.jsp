@@ -24,8 +24,15 @@
 				data-toggle="dropdown"> Admin </a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="listorder.jsp"
-						style="color: #403F3D;">Orders List</a> <a class="dropdown-item"
+						style="color: #403F3D;">Orders List</a> 
+					<a class="dropdown-item"
 						href="admin.jsp" style="color: #403F3D;">Daily Totals</a>
+					<a class="dropdown-item"
+						href="listCustomer.jsp" style="color: #403F3D;">View User Accounts</a>
+					<a class="dropdown-item"
+						href="addProduct.jsp" style="color: #403F3D;">Add New Product</a>
+					<a class="dropdown-item"
+						href="updateProduct.jsp" style="color: #403F3D;">Update Product Record</a>
 				</div></li>
 			<li class="nav-item"><a
 				class="nav-link
@@ -58,6 +65,7 @@
 								</div>
 								<button type="submit" id="btnLogin"
 									class="btn btn-secondary btn-sm">Login</button>
+								<p>Or create a new account <a href="newCustomer.jsp">here!</a></p>
 							</form>
 						</div>
 					</div>

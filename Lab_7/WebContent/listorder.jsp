@@ -13,6 +13,7 @@
 </head>
 <body>
 <%@ include file="auth.jsp"%>
+<%@ include file="adminAuth.jsp"%>
 <%@ include file="header.jsp"%>
 	<div class="container" style="background-color: #403F3D; text-align:center;">
 		<div class="col-sm-12 p-5">
