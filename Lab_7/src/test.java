@@ -1,5 +1,9 @@
 import java.sql.*;
 import java.io.*;
+
+/*
+ * This Class is where I would test out different methods, queries, and updates
+ */
 public class test {
 
 	public static void main(String[] args) {
@@ -57,18 +61,34 @@ public class test {
 			try(Connection con = DriverManager.getConnection(url,uid,pw);
 					Statement stmt = con.createStatement()) {
 				
-//				String sql = "UPDATE customer SET admin=1 WHERE userid='arnold'";
+//				String sql = "UPDATE customer SET admin=1 WHERE userid='jailbreakjake'";
 //				stmt.executeUpdate(sql);
-				String sql1 = "SELECT * FROM customer WHERE userid='arnold'";
-				ResultSet rs = stmt.executeQuery(sql1);
-				while(rs.next()) {
-					for(int i=1;i<=13;++i ) {
-						System.out.println(rs.getString(i));
-					}
+//				String sql1 = "SELECT * FROM inCart";
+//				ResultSet rs = stmt.executeQuery(sql1);
+//				while(rs.next()) {
+//					for(int i=1;i<=4;++i ) {
+//						System.out.println(rs.getString(i));
+//					}
+//				}
+				String sqlReview = "SELECT reviewId, reviewRating, reviewDate, customerId"+
+						" FROM review WHERE ";
+				PreparedStatement psrev = con.prepareStatement(sqlReview);
+				//psrev.setInt(1, 1);
+				ResultSet rsrev = psrev.executeQuery();
+				while(rsrev.next()) {
+					for(int i=1;i<5;++i)
+						System.out.println(rsrev.getString(i));
 				}
+//				DatabaseMetaData dmd = con.getMetaData();
+//				ResultSet rs1 = dmd.getColumns(null, null, "review", "%");
+//				while(rs1.next()) {
+//					System.out.println(rs1.getString(4));
+//				}
 			} catch(SQLException e) {
 				System.err.println(e);
-			}		
+			} finally {
+				System.out.println("All done!");
+			}
 	}
 
 }

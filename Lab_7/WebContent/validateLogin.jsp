@@ -1,7 +1,10 @@
 <%@ page language="java" import="java.io.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page import="java.util.ArrayList"%>
 <%@ include file="jdbc.jsp"%>
 <%
+	
 	String authenticatedUser = null;
 	session = request.getSession(true);
 	
@@ -53,13 +56,44 @@
 				}
 			}
 			//starter code to store/retrieve cart from db
-			String sqlCart = "SELECT I.orderId, productId, quantity, price FROM incart "+
-			"I JOIN orderSummary O ON I.orderId=O.orderId WHERE customerId = ?";
+			String sqlCart = "SELECT I.productId, productName, price, quantity FROM incart "+
+					"I JOIN customer C ON I.customerId = C.customerId JOIN product P ON I.productId=P.productId"+
+					" WHERE I.customerId = ?";
 			PreparedStatement psCart = con.prepareStatement(sqlCart);
+			customerID = (String)session.getAttribute("uid");
 			psCart.setString(1, customerID);
 			ResultSet rsCart = psCart.executeQuery();
-			if(rsCart.next()) {
+			while(rsCart.next()) {
+				//create new hashmap for product list
+				@SuppressWarnings({ "unchecked" })
+				HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session
+					.getAttribute("productList");
+				if (productList == null) { // No products currently in list.  Create a list.
+					productList = new HashMap<String, ArrayList<Object>>();
+				}
+				//Scrape db for variables
+				String id = rsCart.getString(1);
+				String name = rsCart.getString(2);
+				String price = rsCart.getString(3);
+				int quantity = rsCart.getInt(4);
+				//create new array list for product
+				ArrayList<Object> product = new ArrayList<Object>();
+				product.add(id); //id
+				product.add(name); //name
+				product.add(price); //price
+				product.add(quantity); //quantity
 				
+				//check hashmap for product; if product from db is already in the cart, add
+				//their quantities together. If not, add to hash map
+				if (productList.containsKey(id)) {
+					product = (ArrayList<Object>) productList.get(id);
+					int curAmount = ((Integer) product.get(3)).intValue();
+					product.set(3, new Integer(curAmount + quantity));
+				} else
+					productList.put(id, product);
+				
+				//set productList as a session variable
+				session.setAttribute("productList", productList);
 			}
 
 		} catch (SQLException ex) {

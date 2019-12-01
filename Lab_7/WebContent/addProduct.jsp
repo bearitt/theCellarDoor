@@ -17,6 +17,7 @@
 	<div class="container" style="background-color: #403F3D;">
 		<div class="row">
 			<div class="col-sm-6 p-5">
+			<h1>Add New Product</h1>
 				<%
 					try {
 						getConnection();

@@ -2,13 +2,13 @@ import java.sql.*;
 import java.io.*;
 
 /*
- * This Class backs up the products in the database to a csv file
+ * This Class backs up the users in the database to a csv file
  */
-public class productBackup {
+public class userBackup {
 
 	public static void main(String[] args) {
 		
-		String dest = "testfile.csv";
+		String dest = "customer.csv";
 		System.out.println(writeCsv(dest));
 	}
 	
@@ -20,7 +20,7 @@ public class productBackup {
 		try(Connection con=DriverManager.getConnection(url, uid, pw);
 				Statement stmt = con.createStatement();) {
 			//execute query
-			String sql = "SELECT * FROM product";
+			String sql = "SELECT * FROM customer";
 			ResultSet rst = stmt.executeQuery(sql);
 			//get metadata
 			DatabaseMetaData dbmd = con.getMetaData();
@@ -33,15 +33,15 @@ public class productBackup {
 				int j = 0;
 				while(rmd.next()) {
 					output.print(rmd.getString(4));
-					if(++j!=7)
+					if(++j!=13)
 						output.print(",");
 					else
 						output.print("\n");
 				}
 				while(rst.next()) {
-					for(int i=1;i<=7;++i) {
+					for(int i=1;i<=13;++i) {
 						output.print(rst.getString(i));
-						if(i!=7)
+						if(i!=13)
 							output.print(",");
 						else
 							output.print("\n");

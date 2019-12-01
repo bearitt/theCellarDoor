@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 /**
- * Loads the order database using code.
+ * This Class loads the database
  */
 public class LoadData
 {

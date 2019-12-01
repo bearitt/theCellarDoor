@@ -18,7 +18,8 @@
   <%@ include file="adminAuth.jsp"%>
   <%@ include file="header.jsp"%>
   <div class="container" style="background-color: #403F3D;">
-  		<div class="row">
+  		<div class="col-sm-12 p-5">
+  		<h1>Daily Totals</h1>
   <table class="table table-hover table-borderless table-responsive-md">
     <thead><tr>
       <th>Order Date</th><th>Total Order Amount</th>

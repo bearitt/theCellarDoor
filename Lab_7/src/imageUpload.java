@@ -1,10 +1,12 @@
 import java.sql.*;
 import java.io.*;
-
+/*
+ * This class automates the uploading of images to the product
+ * relation of the database from the img directory
+ */
 public class imageUpload {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Loading database");
 		try { // Load driver class
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

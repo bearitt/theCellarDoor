@@ -32,7 +32,6 @@
 		product.set(3, new Integer(curAmount + 1));
 	} else
 		productList.put(id, product);
-
 	session.setAttribute("productList", productList);
 %>
 <jsp:forward page="showcart.jsp" />

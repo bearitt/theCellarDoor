@@ -31,41 +31,44 @@
 		<div class="col-sm-12 p-5">
 			<%
 				// Get the current list of products
-				@SuppressWarnings({ "unchecked" })
-				HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session
-						.getAttribute("productList");
-				ArrayList<Object> product = new ArrayList<Object>();
-				String delete = request.getParameter("delete");
-				String update = request.getParameter("update");
-				String newQty = request.getParameter("newqty");
-				if (productList != null) {
-					if (productList.size() == 0) {
-						session.setAttribute("productList", null);
-						productList = null;
-					}
-					if (delete != null && (!delete.equals("-1") && productList.containsKey(delete)))
-						productList.remove(delete);
-					if (update != null && newQty != null && productList.containsKey(update) && newQty.equals("0"))
-						productList.remove(update);
-					else if (delete != null && delete.equals("-1")) {
-						session.setAttribute("productList", null);
-						productList = null;
-					}
-				}
-				if (productList == null) {
-					out.println("<H1>Your shopping cart is empty!</H1>");
-					productList = new HashMap<String, ArrayList<Object>>();
-				} else {
-					//TODO:move the next three conditionals outside of if(productList==null)
-					//add check for productlist being null
-
-					if (update != null && (!update.equals(""))) {
-						if (productList.containsKey(update)) { // find item in shopping cart
-							product = (ArrayList<Object>) productList.get(update);
-							product.set(3, (new Integer(newQty))); // change quantity to new quantity
-						} else {
-							productList.put(delete, product);
+					@SuppressWarnings({ "unchecked" })
+					HashMap<String, ArrayList<Object>> productList = (HashMap<String, ArrayList<Object>>) session
+							.getAttribute("productList");
+					ArrayList<Object> product = new ArrayList<Object>();
+					String delete = request.getParameter("delete");
+					String update = request.getParameter("update");
+					String newQty = request.getParameter("newqty");
+					if (productList != null) {
+						if (productList.size() == 0) {
+							session.setAttribute("productList", null);
+							productList = null;
 						}
+						if (delete != null && (!delete.equals("-1") && productList.containsKey(delete)))
+							productList.remove(delete);
+						if (update != null && newQty != null && productList.containsKey(update) && newQty.equals("0"))
+							productList.remove(update);
+						else if (delete != null && delete.equals("-1")) {
+							session.setAttribute("productList", null);
+							productList = null;
+						}
+					}
+					if (productList == null) {
+						out.println("<H1>Your shopping cart is empty!</H1>");
+						productList = new HashMap<String, ArrayList<Object>>();
+					} else {
+						//TODO:move the next three conditionals outside of if(productList==null)
+						//add check for productlist being null
+						try {
+							if (update != null && (!update.equals(""))) {
+								if (productList.containsKey(update)) { // find item in shopping cart
+									product = (ArrayList<Object>) productList.get(update);
+									product.set(3, (Integer.parseInt(newQty))); // change quantity to new quantity
+	
+								} else {
+									productList.put(delete, product);
+								}
+							}
+						} catch (NumberFormatException e) {
 					}
 
 					NumberFormat currFormat = NumberFormat.getCurrencyInstance();
@@ -87,7 +90,7 @@
 							continue;
 						}
 						//make orderId read only
-						out.print("<tr><td>"+product.get(0)+"</td>");
+						out.print("<tr><td>" + product.get(0) + "</td>");
 						out.print("<td>" + product.get(1) + "</td>");
 						//form for changing quantity (my code)
 						//out.print("<td><input type=\"text\" class=\"form-control\""+
@@ -110,7 +113,7 @@
 						try {
 							qty = Integer.parseInt(itemqty.toString());
 						} catch (Exception e) {
-							out.println("Invalid quantity for product: " + product.get(0) + " quantity: " + qty);
+							//out.println("Invalid quantity for product: " + product.get(0) + " quantity: " + qty);
 						}
 
 						out.print("<td align=\"right\">" + currFormat.format(pr) + "</td>");

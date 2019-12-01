@@ -1,6 +1,9 @@
 import java.sql.*;
 import java.io.*;
-
+/*
+ * This Class uploads the products in a csv file to the
+ * product relation of the database
+ */
 public class productUpload {
 
 	public static void main(String[] args) {

@@ -16,7 +16,7 @@
 <%@ include file="header.jsp" %>
 	<div class="container" style="background-color: #403F3D;">
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-9 p-5">
 				<form method="get" action="listprod.jsp" class="form-inline">
 					<div class="form-group">
 						<div class="col-xs-12 col-md-4">

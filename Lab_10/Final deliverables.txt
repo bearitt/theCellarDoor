@@ -38,22 +38,23 @@ Barret
 Optional everything
 SHA-512 for password protect?
 Store cart in DB between sessions
-Check admin privileges
-	header admin
-	all admin pages
-		addProduct
-		listorder
-		listCustomer
-		admin
-		updateProduct
+#Check admin privileges
+#	header admin
+#	all admin pages
+#		addProduct
+#		listorder
+#		listCustomer
+#		admin
+#		updateProduct
 Change up homepage
-	remove links
-	create cards for
-		products
-		login
-		create new account
+#	remove links
+#	create cards for
+#		products
+#		login
+#		create new account
 Fix update quantity = 0 // fixed?? on showcart, if size == 0, remove
 About us page?
+Remember: you changed the ddl for incart (PK is customerId, productId instead of orderId, productId)
 
 Aleks
 ---------

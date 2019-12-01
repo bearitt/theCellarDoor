@@ -11,28 +11,32 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<!--
-      <li class="nav-item active"><a class="nav-link"
-        href="login.jsp">Login <span class="sr-only">(current)</span></a></li> -->
-
-			<li class="nav-item"><a class="nav-link" href="listprod.jsp">Product
-					List</a></li>
-			<li class="nav-item"><a class="nav-link" href="showcart.jsp">Your
-					Shopping Cart</a></li>
-			<li class="nav-item dropdown"><a href="admin.jsp"
+			<li class="nav-item"><a class="nav-link" href="listprod.jsp">
+			<i class="fas fa-shopping-basket"></i> Product List</a></li>
+			<li class="nav-item"><a class="nav-link" href="showcart.jsp">
+			<i class="fas fa-shopping-cart"></i> Your Shopping Cart</a></li>
+			<li class="nav-item dropdown
+			<%boolean adminauth = session.getAttribute("admin") == null ? false : true;
+			if (!adminauth)
+				out.print(" d-none");%>
+			"><a href="admin.jsp"
 				class="nav-link dropdown-toggle" id="navbardrop"
-				data-toggle="dropdown"> Admin </a>
+				data-toggle="dropdown"><i class="fas fa-users-cog"></i> Admin </a>
 				<div class="dropdown-menu">
 					<a class="dropdown-item" href="listorder.jsp"
-						style="color: #403F3D;">Orders List</a> 
+						style="color: #403F3D;"><i class="fas fa-poll-h"></i> Orders List</a> 
 					<a class="dropdown-item"
-						href="admin.jsp" style="color: #403F3D;">Daily Totals</a>
+						href="admin.jsp" style="color: #403F3D;">
+						<i class="fas fa-search-dollar"></i> Daily Totals</a>
 					<a class="dropdown-item"
-						href="listCustomer.jsp" style="color: #403F3D;">View User Accounts</a>
+						href="listCustomer.jsp" style="color: #403F3D;">
+						<i class="fas fa-users"></i> View User Accounts</a>
 					<a class="dropdown-item"
-						href="addProduct.jsp" style="color: #403F3D;">Add New Product</a>
+						href="addProduct.jsp" style="color: #403F3D;">
+						<i class="far fa-plus-square"></i> Add New Product</a>
 					<a class="dropdown-item"
-						href="updateProduct.jsp" style="color: #403F3D;">Update Product Record</a>
+						href="updateProduct.jsp" style="color: #403F3D;">
+						<i class="fas fa-edit"></i> Update Product Record</a>
 				</div></li>
 			<li class="nav-item"><a
 				class="nav-link
@@ -40,7 +44,7 @@
 			if (!auth)
 				out.print(" d-none");%>
       "
-				href="customer.jsp">Your Information</a></li>
+				href="customer.jsp"><i class="fas fa-clipboard"></i> Your Information</a></li>
 			<li
 				class="nav-item dropdown
       <%auth = session.getAttribute("authenticatedUser") == null ? false : true;
@@ -48,7 +52,7 @@
 				out.print(" d-none");%>
       ">
 				<a href="login.jsp" class="nav-link dropdown-toggle"
-				data-toggle="dropdown"> Login</a>
+				data-toggle="dropdown"><i class="fas fa-user-circle"></i> Login</a>
 				<div class="dropdown-menu"
 					style="background-color: #736E6C; color: #262524;">
 					<div class="row">
@@ -94,3 +98,4 @@
 		</form>
 	</div>
 </nav>
+<script src="https://kit.fontawesome.com/e9d963041d.js" crossorigin="anonymous"></script>

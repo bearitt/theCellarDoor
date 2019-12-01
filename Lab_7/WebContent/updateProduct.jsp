@@ -17,48 +17,24 @@
 	<div class="container" style="background-color: #403F3D;">
 		<div class="row">
 			<div class="col-sm-6 p-5">
+			<h1>Update Product</h1>
 				<%
 					try {
 						getConnection();
-				%>
-				<form action="updateProduct.jsp" method="post">
-					<div class="form-group">
-						<input type="text" name="prodId" id="prodId" 
-						placeholder="ID of product to update:" class="form-control">
-					</div>
-					<div class="form-group">
-						<input type="text" name="prodName" id="prodName"
-						placeholder="New Product Name:" class="form-control">
-					</div>
-					<div class="form-group input-group mb-3">
-						<span class="input-group-text">$</span>
-						<input type="text" name="prodPrice" id="prodPrice" 
-						placeholder="New Product Price:" class="form-control">
-					</div>
-					<div class="form-group">
-						<textarea name="prodDesc" id="prodDesc" rows="10" cols="30"
-						placeholder="Enter New Product Description:" class="form-control"></textarea>
-					</div>
-					<div class="form-group">
-						<input type="text" name="catId" id="catId"
-						placeholder="Change Category:" class="form-control"><br>
-					</div>
-					<div class="custom-file">
-						<input type="file" name="prodImg"
-							class="custom-file-input" id="prodImg">
-						<label class="custom-file-label" 
-						for="prodImg">Upload new Product Image</label>
-					</div>
-					<br>
-					<br>
-					<button type="submit" class="btn btn-secondary btn-sm btn-block">Submit</button>
-				</form>
-				<%
 					if (request.getParameter("prodId") != null && !request.getParameter("prodId").equals("")) {
 							try {
 
 								int prodId = Integer.parseInt(request.getParameter("prodId"));
-
+								
+								//check if prodId is in the database
+								String sqlprodId = "SELECT * FROM product WHERE productId = ?";
+								PreparedStatement psId = con.prepareStatement(sqlprodId);
+								psId.setInt(1,prodId);
+								ResultSet rsId = psId.executeQuery();
+								if(!rsId.next()) {
+									throw new NumberFormatException();
+								}
+								
 								if (request.getParameter("prodName") != null && !request.getParameter("prodName").equals("")) {
 									String prodName = (String) request.getParameter("prodName");
 									String sqlName = "UPDATE product SET productName=? WHERE productId=?;";
@@ -124,11 +100,44 @@
 								out.print("<h2>No product Id entered!</h2>");
 						}
 					} catch (SQLException e) {
-						System.err.println(e);
+						
 					} finally {
 						closeConnection();
 					}
 				%>
+				<form action="updateProduct.jsp" method="post">
+					<div class="form-group">
+						<input type="text" name="prodId" id="prodId" 
+						placeholder="ID of product to update:" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="text" name="prodName" id="prodName"
+						placeholder="New Product Name:" class="form-control">
+					</div>
+					<div class="form-group input-group mb-3">
+						<span class="input-group-text">$</span>
+						<input type="text" name="prodPrice" id="prodPrice" 
+						placeholder="New Product Price:" class="form-control">
+					</div>
+					<div class="form-group">
+						<textarea name="prodDesc" id="prodDesc" rows="10" cols="30"
+						placeholder="Enter New Product Description:" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<input type="text" name="catId" id="catId"
+						placeholder="Change Category:" class="form-control"><br>
+					</div>
+					<div class="custom-file">
+						<input type="file" name="prodImg"
+							class="custom-file-input" id="prodImg">
+						<label class="custom-file-label" 
+						for="prodImg">Upload new Product Image</label>
+					</div>
+					<br>
+					<br>
+					<button type="submit" class="btn btn-secondary btn-sm btn-block">Submit</button>
+				</form>
+				
 			</div>
 		</div>
 	</div>

@@ -14,7 +14,7 @@
 	<%@ include file="header.jsp"%>
 	<div class="container" style="background-color: #403F3D;">
 		<div class="row">
-			<div class="col-sm-9">
+			<div class="col-sm-9 p-5">
 				<%
 					String useName = (String) session.getAttribute("authenticatedUser");
 					// TODO: Print Customer information
@@ -41,6 +41,11 @@
 								out.println("<td>" + temp + "</td></tr>");
 							}
 							out.println("</tbody></table>");
+							%>
+							
+				<a href="#" class="btn btn-secondary" role="button">Edit your profile</a>
+				<a href="customerOrders.jsp" class="btn btn-secondary" role="button">Click here to view past orders</a>			
+				<%
 						} else {
 							out.println("<h1>No customer information found!");
 						}

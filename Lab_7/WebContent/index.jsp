@@ -13,6 +13,9 @@
       margin:auto;
       width:100%;
     }
+    .card{
+    background-color:#736E6C;
+    }
   	</style>
   </head>
 <body>
@@ -86,27 +89,44 @@
         " showcasing fine wines from BC and around the world.</p>");
         }
         %>
+		</div>
+		<div class="col-sm-4 p-5">
+
+		<div class="card">
+			<a href="listprod.jsp">
+				<img class="card-img-top img-thumbnail" src="img/prodthumb.jpg" 
+				width=250 height=250 alt="Wine bottle">
+			</a>
+			<div class="card-body">
+			<h4 class="card-title">Products</h4>
+			<p class="card-text">Start your journey to Bacchanalia</p>
 			</div>
-			<div class="col-sm-4 p-5">
-				<h2 align="center">
-					<a href="listprod.jsp">Begin Shopping</a>
-				</h2>
-				<h2 align="center">
-					<a href="listorder.jsp">List All Orders</a>
-				</h2>
-        <h2 align="center"><a href="login.jsp">Login</a></h2>
-
-        <h2 align="center"><a href="customer.jsp">Customer Info</a></h2>
-
-        <h2 align="center"><a href="admin.jsp">Administrators</a></h2>
-
-        <h2 align="center"><a href="logout.jsp">Log out</a></h2>
+		</div>
+		<div class="card">
+			<a href="login.jsp">
+				<img class="card-img-top img-thumbnail" src="img/thumbscrew.jpg" 
+				width=250 height=250 alt="Corkscrew">
+			</a>
+			<div class="card-body">
+			<h4 class="card-title">Login</h4>
+			<p class="card-text">Welcome back to The Cellar Door, login here!</p>
+			</div>
+		</div>
+		<div class="card">
+			
+			<div class="card-body">
+			<h4 class="card-title">
+			<a href="newCustomer.jsp">
+				<i class="fas fa-user-circle"></i> Sign up</a></h4>
+			<p class="card-text">What's that, you want to join the club? Come on in, everyone is welcome!</p>
+			</div>
+		</div>	
+        
 			</div>
 		</div>
 	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-
 
 
 
