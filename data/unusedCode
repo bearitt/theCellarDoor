@@ -1,0 +1,77 @@
+<!--_____________________shop.html_____________________-->
+<!--css header-->
+.container {
+  padding: 80px 120px;
+}
+
+<!-- Carousel captions-->
+<div class="carousel-caption">
+  <h1>Some barrels</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Some grapes</h1>
+</div>
+<div class="carousel-caption">
+  <h1>A vineyard</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Looks like a bucket</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Glasses with no wine</h1>
+</div>
+<div class="carousel-caption">
+  <h1>Glasses with wine</h1>
+</div>
+<!--listprod form original-->
+<form method="get" action="listprod.jsp" class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="helpProduct">Search for the products you want to buy</label>
+    <input type="text" class="form-control" id="helpProduct" placeholder="Enter product name" name="productName">
+  </div>
+
+  <button type="submit" class="btn btn-secondary">Submit</button>
+  <button type="reset" class="btn btn-dark">Reset</button>
+</form>
+<!--Colour scheme-->
+black         #262524
+dark grey     #403F3D
+light         #F2E8DF
+medium        #736E6C
+medium-light  #A6A29F
+
+<!--Ideas for final project-->
+-admin can grant privileges to certain users
+
+
+<!--Dimensions for photos-->
+300x500px
+watermark:
+  Top:430
+  Left:250
+  Width:40
+  Height:57
+  Transparency:50
+<!--Product categories-->
+1 - Red Wine
+2 - Rose
+3 - White Wine
+4 - Sparkling Wine
+5 - Dessert Wine
+6 - Accessories
+<!--Dimensions for logo-->
+x:60
+y:100
+W:100.112
+H:142.049
+<!--Algorithm for saving cart-->
+user logs in
+ ->session attributes: full name, validated, userid
+ check db for cart
+  yes, create arraylist with cart items
+  no, exit
+addcart
+  add item to arraylist
+  ->check for validated
+    yes, add item to db
+    no, exit
